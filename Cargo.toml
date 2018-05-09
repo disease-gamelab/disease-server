@@ -1,0 +1,23 @@
+[package]
+name = "disease2018"
+version = "0.1.0"
+authors = ["Kai Hermann <kai.uwe.hermann@gmail.com>"]
+
+[dependencies]
+diesel = { version = "1.0.0", features = ["postgres", "r2d2"] }
+diesel_infer_schema = { version = "1.0.0", features = ["postgres"] }
+dotenv = "0.9.0"
+router = "*"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+bodyparser = "*"
+persistent="*"
+time = "0.1"
+rand = "*"
+
+[dependencies.iron]
+version = "*"
+
+[dependencies.params]
+version = "*"

@@ -1,0 +1,28 @@
+version: '2'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    networks:
+      - network
+    ports:
+       - "127.0.0.1:5000:5000"
+    environment:
+      DATABASE_URL: postgres://disease:disease@postgres:5432/disease
+      RUST_BACKTRACE: 1
+  postgres:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-postgres
+    restart: always
+    networks:
+      - network
+    environment:
+      POSTGRES_PASSWORD: 'disease'
+      POSTGRES_USER: 'disease'
+      POSTGRES_DB: 'disease'
+
+networks:
+  network:
+

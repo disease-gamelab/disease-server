@@ -1,0 +1,4 @@
+FROM postgres
+
+# Create the table on start-up
+ADD schema.sql /docker-entrypoint-initdb.d/
